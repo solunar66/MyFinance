@@ -16,7 +16,17 @@ namespace MyFinance
             InitializeComponent();
         }
 
-        private void treeHeadDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button_adjust_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_partner_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_invest_Click(object sender, EventArgs e)
         {
 
         }
