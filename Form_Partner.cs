@@ -15,5 +15,20 @@ namespace MyFinance
         {
             InitializeComponent();
         }
+
+        private void Form_Partner_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_quit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

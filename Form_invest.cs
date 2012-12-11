@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace MyFinance
 {
-    public partial class Form_invest : Form
+    public partial class Form_Invest : Form
     {
-        public Form_invest()
+        public Form_Invest()
         {
             InitializeComponent();
         }
