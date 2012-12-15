@@ -9,7 +9,7 @@ using System.Resources;
 [assembly: AssemblyTitle("MyFinance")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("SamCHENG Studio")]
 [assembly: AssemblyProduct("MyFinance")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]

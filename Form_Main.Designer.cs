@@ -91,6 +91,18 @@
             this.tabControl_view = new System.Windows.Forms.TabControl();
             this.button_save = new System.Windows.Forms.Button();
             this.button_quit = new System.Windows.Forms.Button();
+            this.Column45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage_day.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_day)).BeginInit();
             this.tabPage_year.SuspendLayout();
@@ -200,7 +212,7 @@
             this.dataGridView_day.Name = "dataGridView_day";
             this.dataGridView_day.RowHeadersWidth = 55;
             this.dataGridView_day.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView_day.RowTemplate.Height = 23;
+            this.dataGridView_day.RowTemplate.Height = 50;
             this.dataGridView_day.Size = new System.Drawing.Size(1098, 553);
             this.dataGridView_day.TabIndex = 4;
             this.dataGridView_day.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_day_RowPostPaint);
@@ -508,21 +520,33 @@
             this.tabPage_year.Location = new System.Drawing.Point(4, 25);
             this.tabPage_year.Name = "tabPage_year";
             this.tabPage_year.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_year.Size = new System.Drawing.Size(1096, 592);
+            this.tabPage_year.Size = new System.Drawing.Size(1110, 592);
             this.tabPage_year.TabIndex = 1;
             this.tabPage_year.Text = "年视图";
             this.tabPage_year.UseVisualStyleBackColor = true;
             // 
             // dataGridView_year
             // 
-            this.dataGridView_year.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_year.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_year.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column44});
+            this.Column44,
+            this.Column45,
+            this.Column46,
+            this.Column47,
+            this.Column48,
+            this.Column49,
+            this.Column50,
+            this.Column51,
+            this.Column52,
+            this.Column53,
+            this.Column54,
+            this.Column55,
+            this.Column56});
             this.dataGridView_year.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_year.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_year.Name = "dataGridView_year";
-            this.dataGridView_year.RowTemplate.Height = 23;
-            this.dataGridView_year.Size = new System.Drawing.Size(1090, 586);
+            this.dataGridView_year.RowTemplate.Height = 50;
+            this.dataGridView_year.Size = new System.Drawing.Size(1104, 586);
             this.dataGridView_year.TabIndex = 0;
             // 
             // Column44
@@ -579,7 +603,7 @@
             this.dataGridView_month.ReadOnly = true;
             this.dataGridView_month.RowHeadersWidth = 60;
             this.dataGridView_month.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView_month.RowTemplate.Height = 23;
+            this.dataGridView_month.RowTemplate.Height = 50;
             this.dataGridView_month.Size = new System.Drawing.Size(1098, 553);
             this.dataGridView_month.TabIndex = 4;
             this.dataGridView_month.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_month_RowPostPaint);
@@ -744,6 +768,66 @@
             this.button_quit.UseVisualStyleBackColor = true;
             this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
             // 
+            // Column45
+            // 
+            this.Column45.HeaderText = "2013年";
+            this.Column45.Name = "Column45";
+            // 
+            // Column46
+            // 
+            this.Column46.HeaderText = "2014年";
+            this.Column46.Name = "Column46";
+            // 
+            // Column47
+            // 
+            this.Column47.HeaderText = "2015年";
+            this.Column47.Name = "Column47";
+            // 
+            // Column48
+            // 
+            this.Column48.HeaderText = "2016年";
+            this.Column48.Name = "Column48";
+            // 
+            // Column49
+            // 
+            this.Column49.HeaderText = "2017年";
+            this.Column49.Name = "Column49";
+            // 
+            // Column50
+            // 
+            this.Column50.HeaderText = "2018年";
+            this.Column50.Name = "Column50";
+            // 
+            // Column51
+            // 
+            this.Column51.HeaderText = "2019年";
+            this.Column51.Name = "Column51";
+            // 
+            // Column52
+            // 
+            this.Column52.HeaderText = "2020年";
+            this.Column52.Name = "Column52";
+            // 
+            // Column53
+            // 
+            this.Column53.HeaderText = "2021年";
+            this.Column53.Name = "Column53";
+            // 
+            // Column54
+            // 
+            this.Column54.HeaderText = "2022年";
+            this.Column54.Name = "Column54";
+            // 
+            // Column55
+            // 
+            this.Column55.HeaderText = "2023年";
+            this.Column55.Name = "Column55";
+            // 
+            // Column56
+            // 
+            this.Column56.HeaderText = "2024年";
+            this.Column56.Name = "Column56";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -837,6 +921,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column41;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column42;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column43;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column45;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column46;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column47;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column48;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column49;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column50;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column51;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column52;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column53;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column54;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column55;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column56;
 
 
 
