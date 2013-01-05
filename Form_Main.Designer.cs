@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
             this.button_invest = new System.Windows.Forms.Button();
             this.button_partner = new System.Windows.Forms.Button();
-            this.button_adjust = new System.Windows.Forms.Button();
+            this.button_company = new System.Windows.Forms.Button();
             this.tabPage_day = new System.Windows.Forms.TabPage();
             this.dateTimePicker_month = new System.Windows.Forms.DateTimePicker();
             this.dataGridView_day = new System.Windows.Forms.DataGridView();
@@ -71,6 +71,18 @@
             this.tabPage_year = new System.Windows.Forms.TabPage();
             this.dataGridView_year = new System.Windows.Forms.DataGridView();
             this.Column44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage_month = new System.Windows.Forms.TabPage();
             this.dateTimePicker_year = new System.Windows.Forms.DateTimePicker();
             this.dataGridView_month = new System.Windows.Forms.DataGridView();
@@ -91,18 +103,6 @@
             this.tabControl_view = new System.Windows.Forms.TabControl();
             this.button_save = new System.Windows.Forms.Button();
             this.button_quit = new System.Windows.Forms.Button();
-            this.Column45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage_day.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_day)).BeginInit();
             this.tabPage_year.SuspendLayout();
@@ -114,33 +114,54 @@
             // 
             // button_invest
             // 
-            this.button_invest.Location = new System.Drawing.Point(216, 627);
+            this.button_invest.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_invest.FlatAppearance.BorderSize = 0;
+            this.button_invest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_invest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_invest.Image = global::MyFinance.Properties.Resources.invest;
+            this.button_invest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_invest.Location = new System.Drawing.Point(232, 542);
             this.button_invest.Name = "button_invest";
-            this.button_invest.Size = new System.Drawing.Size(100, 30);
+            this.button_invest.Size = new System.Drawing.Size(100, 33);
             this.button_invest.TabIndex = 6;
-            this.button_invest.Text = "编辑投资";
+            this.button_invest.Text = "项目信息";
+            this.button_invest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_invest.UseVisualStyleBackColor = true;
             this.button_invest.Click += new System.EventHandler(this.button_invest_Click);
             // 
             // button_partner
             // 
-            this.button_partner.Location = new System.Drawing.Point(110, 627);
+            this.button_partner.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_partner.FlatAppearance.BorderSize = 0;
+            this.button_partner.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_partner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_partner.Image = global::MyFinance.Properties.Resources.partner;
+            this.button_partner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_partner.Location = new System.Drawing.Point(4, 542);
             this.button_partner.Name = "button_partner";
-            this.button_partner.Size = new System.Drawing.Size(100, 30);
+            this.button_partner.Size = new System.Drawing.Size(100, 33);
             this.button_partner.TabIndex = 5;
-            this.button_partner.Text = "编辑股东";
+            this.button_partner.Text = "股东信息";
+            this.button_partner.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_partner.UseVisualStyleBackColor = true;
             this.button_partner.Click += new System.EventHandler(this.button_partner_Click);
             // 
-            // button_adjust
+            // button_company
             // 
-            this.button_adjust.Location = new System.Drawing.Point(4, 627);
-            this.button_adjust.Name = "button_adjust";
-            this.button_adjust.Size = new System.Drawing.Size(100, 30);
-            this.button_adjust.TabIndex = 4;
-            this.button_adjust.Text = "调整资金";
-            this.button_adjust.UseVisualStyleBackColor = true;
-            this.button_adjust.Click += new System.EventHandler(this.button_adjust_Click);
+            this.button_company.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_company.FlatAppearance.BorderSize = 0;
+            this.button_company.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_company.Image = global::MyFinance.Properties.Resources.company;
+            this.button_company.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_company.Location = new System.Drawing.Point(118, 542);
+            this.button_company.Name = "button_company";
+            this.button_company.Size = new System.Drawing.Size(100, 33);
+            this.button_company.TabIndex = 4;
+            this.button_company.Text = "公司信息";
+            this.button_company.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_company.UseVisualStyleBackColor = true;
+            this.button_company.Click += new System.EventHandler(this.button_company_Click);
             // 
             // tabPage_day
             // 
@@ -151,7 +172,7 @@
             this.tabPage_day.Location = new System.Drawing.Point(4, 25);
             this.tabPage_day.Name = "tabPage_day";
             this.tabPage_day.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_day.Size = new System.Drawing.Size(1110, 592);
+            this.tabPage_day.Size = new System.Drawing.Size(886, 511);
             this.tabPage_day.TabIndex = 3;
             this.tabPage_day.Text = "日视图";
             this.tabPage_day.UseVisualStyleBackColor = true;
@@ -163,11 +184,11 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker_month.CustomFormat = "yyyy年MM月";
             this.dateTimePicker_month.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_month.Location = new System.Drawing.Point(498, 8);
+            this.dateTimePicker_month.Location = new System.Drawing.Point(398, 9);
             this.dateTimePicker_month.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_month.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_month.Name = "dateTimePicker_month";
-            this.dateTimePicker_month.Size = new System.Drawing.Size(114, 21);
+            this.dateTimePicker_month.Size = new System.Drawing.Size(90, 20);
             this.dateTimePicker_month.TabIndex = 5;
             // 
             // dataGridView_day
@@ -175,6 +196,7 @@
             this.dataGridView_day.AllowUserToAddRows = false;
             this.dataGridView_day.AllowUserToDeleteRows = false;
             this.dataGridView_day.AllowUserToResizeColumns = false;
+            this.dataGridView_day.ColumnHeadersHeight = 30;
             this.dataGridView_day.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_day.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -208,12 +230,12 @@
             this.Column29,
             this.Column30,
             this.Column31});
-            this.dataGridView_day.Location = new System.Drawing.Point(6, 33);
+            this.dataGridView_day.Location = new System.Drawing.Point(6, 36);
             this.dataGridView_day.Name = "dataGridView_day";
             this.dataGridView_day.RowHeadersWidth = 55;
             this.dataGridView_day.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView_day.RowTemplate.Height = 50;
-            this.dataGridView_day.Size = new System.Drawing.Size(1098, 553);
+            this.dataGridView_day.Size = new System.Drawing.Size(874, 469);
             this.dataGridView_day.TabIndex = 4;
             this.dataGridView_day.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_day_RowPostPaint);
             // 
@@ -498,18 +520,24 @@
             // 
             // button_nextmonth
             // 
-            this.button_nextmonth.Location = new System.Drawing.Point(1004, 6);
+            this.button_nextmonth.FlatAppearance.BorderSize = 0;
+            this.button_nextmonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_nextmonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_nextmonth.Location = new System.Drawing.Point(780, 7);
             this.button_nextmonth.Name = "button_nextmonth";
-            this.button_nextmonth.Size = new System.Drawing.Size(100, 23);
+            this.button_nextmonth.Size = new System.Drawing.Size(100, 25);
             this.button_nextmonth.TabIndex = 1;
             this.button_nextmonth.Text = "下一月 >>";
             this.button_nextmonth.UseVisualStyleBackColor = true;
             // 
             // button_lastmonth
             // 
-            this.button_lastmonth.Location = new System.Drawing.Point(4, 6);
+            this.button_lastmonth.FlatAppearance.BorderSize = 0;
+            this.button_lastmonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_lastmonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_lastmonth.Location = new System.Drawing.Point(4, 7);
             this.button_lastmonth.Name = "button_lastmonth";
-            this.button_lastmonth.Size = new System.Drawing.Size(100, 23);
+            this.button_lastmonth.Size = new System.Drawing.Size(100, 25);
             this.button_lastmonth.TabIndex = 1;
             this.button_lastmonth.Text = "<< 上一月";
             this.button_lastmonth.UseVisualStyleBackColor = true;
@@ -520,7 +548,7 @@
             this.tabPage_year.Location = new System.Drawing.Point(4, 25);
             this.tabPage_year.Name = "tabPage_year";
             this.tabPage_year.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_year.Size = new System.Drawing.Size(1110, 592);
+            this.tabPage_year.Size = new System.Drawing.Size(886, 511);
             this.tabPage_year.TabIndex = 1;
             this.tabPage_year.Text = "年视图";
             this.tabPage_year.UseVisualStyleBackColor = true;
@@ -546,13 +574,73 @@
             this.dataGridView_year.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_year.Name = "dataGridView_year";
             this.dataGridView_year.RowTemplate.Height = 50;
-            this.dataGridView_year.Size = new System.Drawing.Size(1104, 586);
+            this.dataGridView_year.Size = new System.Drawing.Size(880, 505);
             this.dataGridView_year.TabIndex = 0;
             // 
             // Column44
             // 
             this.Column44.HeaderText = "2012年";
             this.Column44.Name = "Column44";
+            // 
+            // Column45
+            // 
+            this.Column45.HeaderText = "2013年";
+            this.Column45.Name = "Column45";
+            // 
+            // Column46
+            // 
+            this.Column46.HeaderText = "2014年";
+            this.Column46.Name = "Column46";
+            // 
+            // Column47
+            // 
+            this.Column47.HeaderText = "2015年";
+            this.Column47.Name = "Column47";
+            // 
+            // Column48
+            // 
+            this.Column48.HeaderText = "2016年";
+            this.Column48.Name = "Column48";
+            // 
+            // Column49
+            // 
+            this.Column49.HeaderText = "2017年";
+            this.Column49.Name = "Column49";
+            // 
+            // Column50
+            // 
+            this.Column50.HeaderText = "2018年";
+            this.Column50.Name = "Column50";
+            // 
+            // Column51
+            // 
+            this.Column51.HeaderText = "2019年";
+            this.Column51.Name = "Column51";
+            // 
+            // Column52
+            // 
+            this.Column52.HeaderText = "2020年";
+            this.Column52.Name = "Column52";
+            // 
+            // Column53
+            // 
+            this.Column53.HeaderText = "2021年";
+            this.Column53.Name = "Column53";
+            // 
+            // Column54
+            // 
+            this.Column54.HeaderText = "2022年";
+            this.Column54.Name = "Column54";
+            // 
+            // Column55
+            // 
+            this.Column55.HeaderText = "2023年";
+            this.Column55.Name = "Column55";
+            // 
+            // Column56
+            // 
+            this.Column56.HeaderText = "2024年";
+            this.Column56.Name = "Column56";
             // 
             // tabPage_month
             // 
@@ -563,7 +651,7 @@
             this.tabPage_month.Location = new System.Drawing.Point(4, 25);
             this.tabPage_month.Name = "tabPage_month";
             this.tabPage_month.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_month.Size = new System.Drawing.Size(1110, 592);
+            this.tabPage_month.Size = new System.Drawing.Size(886, 511);
             this.tabPage_month.TabIndex = 0;
             this.tabPage_month.Text = "月视图";
             this.tabPage_month.UseVisualStyleBackColor = true;
@@ -572,11 +660,11 @@
             // 
             this.dateTimePicker_year.CustomFormat = "yyyy年";
             this.dateTimePicker_year.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_year.Location = new System.Drawing.Point(518, 8);
+            this.dateTimePicker_year.Location = new System.Drawing.Point(406, 9);
             this.dateTimePicker_year.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_year.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_year.Name = "dateTimePicker_year";
-            this.dateTimePicker_year.Size = new System.Drawing.Size(75, 21);
+            this.dateTimePicker_year.Size = new System.Drawing.Size(75, 20);
             this.dateTimePicker_year.TabIndex = 5;
             // 
             // dataGridView_month
@@ -598,13 +686,13 @@
             this.Column41,
             this.Column42,
             this.Column43});
-            this.dataGridView_month.Location = new System.Drawing.Point(6, 33);
+            this.dataGridView_month.Location = new System.Drawing.Point(6, 36);
             this.dataGridView_month.Name = "dataGridView_month";
             this.dataGridView_month.ReadOnly = true;
             this.dataGridView_month.RowHeadersWidth = 60;
             this.dataGridView_month.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView_month.RowTemplate.Height = 50;
-            this.dataGridView_month.Size = new System.Drawing.Size(1098, 553);
+            this.dataGridView_month.Size = new System.Drawing.Size(872, 469);
             this.dataGridView_month.TabIndex = 4;
             this.dataGridView_month.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_month_RowPostPaint);
             // 
@@ -718,18 +806,24 @@
             // 
             // button_nextyear
             // 
-            this.button_nextyear.Location = new System.Drawing.Point(1004, 6);
+            this.button_nextyear.FlatAppearance.BorderSize = 0;
+            this.button_nextyear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_nextyear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_nextyear.Location = new System.Drawing.Point(778, 7);
             this.button_nextyear.Name = "button_nextyear";
-            this.button_nextyear.Size = new System.Drawing.Size(100, 23);
+            this.button_nextyear.Size = new System.Drawing.Size(100, 25);
             this.button_nextyear.TabIndex = 1;
             this.button_nextyear.Text = "下一年 >>";
             this.button_nextyear.UseVisualStyleBackColor = true;
             // 
             // button_lastyear
             // 
-            this.button_lastyear.Location = new System.Drawing.Point(4, 6);
+            this.button_lastyear.FlatAppearance.BorderSize = 0;
+            this.button_lastyear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_lastyear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_lastyear.Location = new System.Drawing.Point(4, 7);
             this.button_lastyear.Name = "button_lastyear";
-            this.button_lastyear.Size = new System.Drawing.Size(100, 23);
+            this.button_lastyear.Size = new System.Drawing.Size(100, 25);
             this.button_lastyear.TabIndex = 1;
             this.button_lastyear.Text = "<< 上一年";
             this.button_lastyear.UseVisualStyleBackColor = true;
@@ -744,100 +838,53 @@
             this.tabControl_view.Location = new System.Drawing.Point(0, 0);
             this.tabControl_view.Name = "tabControl_view";
             this.tabControl_view.SelectedIndex = 0;
-            this.tabControl_view.Size = new System.Drawing.Size(1118, 621);
+            this.tabControl_view.Size = new System.Drawing.Size(894, 540);
             this.tabControl_view.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl_view.TabIndex = 1;
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(908, 627);
+            this.button_save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
+            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_save.Image = global::MyFinance.Properties.Resources.ok;
+            this.button_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_save.Location = new System.Drawing.Point(683, 542);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(100, 30);
+            this.button_save.Size = new System.Drawing.Size(100, 33);
             this.button_save.TabIndex = 5;
-            this.button_save.Text = "保 存";
+            this.button_save.Text = "保 存 ";
+            this.button_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // button_quit
             // 
-            this.button_quit.Location = new System.Drawing.Point(1014, 627);
+            this.button_quit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_quit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
+            this.button_quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_quit.Image = global::MyFinance.Properties.Resources.quit;
+            this.button_quit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_quit.Location = new System.Drawing.Point(789, 542);
             this.button_quit.Name = "button_quit";
-            this.button_quit.Size = new System.Drawing.Size(100, 30);
+            this.button_quit.Size = new System.Drawing.Size(100, 33);
             this.button_quit.TabIndex = 6;
-            this.button_quit.Text = "退 出";
+            this.button_quit.Text = "退 出 ";
+            this.button_quit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_quit.UseVisualStyleBackColor = true;
             this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
             // 
-            // Column45
-            // 
-            this.Column45.HeaderText = "2013年";
-            this.Column45.Name = "Column45";
-            // 
-            // Column46
-            // 
-            this.Column46.HeaderText = "2014年";
-            this.Column46.Name = "Column46";
-            // 
-            // Column47
-            // 
-            this.Column47.HeaderText = "2015年";
-            this.Column47.Name = "Column47";
-            // 
-            // Column48
-            // 
-            this.Column48.HeaderText = "2016年";
-            this.Column48.Name = "Column48";
-            // 
-            // Column49
-            // 
-            this.Column49.HeaderText = "2017年";
-            this.Column49.Name = "Column49";
-            // 
-            // Column50
-            // 
-            this.Column50.HeaderText = "2018年";
-            this.Column50.Name = "Column50";
-            // 
-            // Column51
-            // 
-            this.Column51.HeaderText = "2019年";
-            this.Column51.Name = "Column51";
-            // 
-            // Column52
-            // 
-            this.Column52.HeaderText = "2020年";
-            this.Column52.Name = "Column52";
-            // 
-            // Column53
-            // 
-            this.Column53.HeaderText = "2021年";
-            this.Column53.Name = "Column53";
-            // 
-            // Column54
-            // 
-            this.Column54.HeaderText = "2022年";
-            this.Column54.Name = "Column54";
-            // 
-            // Column55
-            // 
-            this.Column55.HeaderText = "2023年";
-            this.Column55.Name = "Column55";
-            // 
-            // Column56
-            // 
-            this.Column56.HeaderText = "2024年";
-            this.Column56.Name = "Column56";
-            // 
             // Form_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 672);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(894, 580);
             this.Controls.Add(this.button_quit);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_invest);
             this.Controls.Add(this.button_partner);
-            this.Controls.Add(this.button_adjust);
+            this.Controls.Add(this.button_company);
             this.Controls.Add(this.tabControl_view);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -861,7 +908,7 @@
 
         private System.Windows.Forms.Button button_invest;
         private System.Windows.Forms.Button button_partner;
-        private System.Windows.Forms.Button button_adjust;
+        private System.Windows.Forms.Button button_company;
         private System.Windows.Forms.TabPage tabPage_day;
         private System.Windows.Forms.DateTimePicker dateTimePicker_month;
         private System.Windows.Forms.DataGridView dataGridView_day;

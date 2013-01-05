@@ -21,10 +21,10 @@ namespace MyFinance
             tabControl_view.SelectedIndex = 1;
         }
 
-        private void button_adjust_Click(object sender, EventArgs e)
+        private void button_company_Click(object sender, EventArgs e)
         {
-            Form_Adjust adjust = new Form_Adjust();            
-            adjust.ShowDialog();
+            Form_Company company = new Form_Company();
+            company.ShowDialog();
         }
 
         private void button_partner_Click(object sender, EventArgs e)

@@ -64,11 +64,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form_Adjust.cs">
+    <Compile Include="Form_Company.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Adjust.Designer.cs">
-      <DependentUpon>Form_Adjust.cs</DependentUpon>
+    <Compile Include="Form_Company.Designer.cs">
+      <DependentUpon>Form_Company.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Invest.cs">
       <SubType>Form</SubType>
@@ -88,10 +88,16 @@
     <Compile Include="Form_Partner.Designer.cs">
       <DependentUpon>Form_Partner.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Splash.Designer.cs">
+      <DependentUpon>Form_Splash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_Adjust.resx">
-      <DependentUpon>Form_Adjust.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Company.resx">
+      <DependentUpon>Form_Company.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Invest.resx">
@@ -104,6 +110,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Partner.resx">
       <DependentUpon>Form_Partner.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Splash.resx">
+      <DependentUpon>Form_Splash.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -134,7 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\app.manifest" />
-    <None Include="Resources\main.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
@@ -152,6 +161,27 @@
       <ProductName>.NET Framework 3.5</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\partner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\company.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
