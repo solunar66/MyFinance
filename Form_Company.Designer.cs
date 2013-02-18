@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_telephone = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox_comment = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox_contact = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox_company = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_Del = new System.Windows.Forms.Button();
             this.button_New = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox_comment = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_total)).BeginInit();
@@ -77,7 +77,7 @@
             this.groupBox1.Location = new System.Drawing.Point(6, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(610, 369);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "公司信息";
             // 
@@ -97,7 +97,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(595, 163);
-            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.TabIndex = 6;
             // 
             // Column1
             // 
@@ -134,8 +134,8 @@
             // 
             // Column6
             // 
-            dataGridViewCellStyle2.NullValue = "无备注";
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.NullValue = "无备注";
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column6.HeaderText = "备注";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -162,7 +162,7 @@
             this.numericUpDown_total.Name = "numericUpDown_total";
             this.numericUpDown_total.ReadOnly = true;
             this.numericUpDown_total.Size = new System.Drawing.Size(100, 21);
-            this.numericUpDown_total.TabIndex = 2;
+            this.numericUpDown_total.TabIndex = 4;
             this.numericUpDown_total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
@@ -180,7 +180,7 @@
             this.textBox_telephone.Location = new System.Drawing.Point(250, 80);
             this.textBox_telephone.Name = "textBox_telephone";
             this.textBox_telephone.Size = new System.Drawing.Size(100, 21);
-            this.textBox_telephone.TabIndex = 1;
+            this.textBox_telephone.TabIndex = 3;
             // 
             // label12
             // 
@@ -192,12 +192,29 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "电话:";
             // 
+            // textBox_comment
+            // 
+            this.textBox_comment.Location = new System.Drawing.Point(89, 171);
+            this.textBox_comment.Name = "textBox_comment";
+            this.textBox_comment.Size = new System.Drawing.Size(473, 21);
+            this.textBox_comment.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(54, 174);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 12);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "备注:";
+            // 
             // textBox_contact
             // 
             this.textBox_contact.Location = new System.Drawing.Point(89, 80);
             this.textBox_contact.Name = "textBox_contact";
             this.textBox_contact.Size = new System.Drawing.Size(100, 21);
-            this.textBox_contact.TabIndex = 1;
+            this.textBox_contact.TabIndex = 2;
             // 
             // label14
             // 
@@ -231,7 +248,7 @@
             this.button_quit.Location = new System.Drawing.Point(518, 406);
             this.button_quit.Name = "button_quit";
             this.button_quit.Size = new System.Drawing.Size(100, 35);
-            this.button_quit.TabIndex = 11;
+            this.button_quit.TabIndex = 10;
             this.button_quit.Text = "退 出";
             this.button_quit.UseVisualStyleBackColor = true;
             this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
@@ -244,7 +261,7 @@
             this.comboBox1.MaxDropDownItems = 100;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(124, 20);
-            this.comboBox1.TabIndex = 12;
+            this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button_save
@@ -252,7 +269,7 @@
             this.button_save.Location = new System.Drawing.Point(412, 406);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(100, 35);
-            this.button_save.TabIndex = 10;
+            this.button_save.TabIndex = 9;
             this.button_save.Text = "保 存";
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
@@ -271,7 +288,7 @@
             this.button_Del.Location = new System.Drawing.Point(118, 406);
             this.button_Del.Name = "button_Del";
             this.button_Del.Size = new System.Drawing.Size(100, 35);
-            this.button_Del.TabIndex = 14;
+            this.button_Del.TabIndex = 8;
             this.button_Del.Text = "删除公司";
             this.button_Del.UseVisualStyleBackColor = true;
             this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
@@ -281,27 +298,10 @@
             this.button_New.Location = new System.Drawing.Point(7, 406);
             this.button_New.Name = "button_New";
             this.button_New.Size = new System.Drawing.Size(100, 35);
-            this.button_New.TabIndex = 13;
+            this.button_New.TabIndex = 7;
             this.button_New.Text = "新建公司";
             this.button_New.UseVisualStyleBackColor = true;
             this.button_New.Click += new System.EventHandler(this.button_New_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(54, 174);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 12);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "备注:";
-            // 
-            // textBox_comment
-            // 
-            this.textBox_comment.Location = new System.Drawing.Point(89, 171);
-            this.textBox_comment.Name = "textBox_comment";
-            this.textBox_comment.Size = new System.Drawing.Size(473, 21);
-            this.textBox_comment.TabIndex = 1;
             // 
             // Form_Company
             // 

@@ -120,7 +120,7 @@ namespace MyFinance
                 da.Fill(ds);
                 return ds;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
             }

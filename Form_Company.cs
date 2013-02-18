@@ -36,12 +36,15 @@ namespace MyFinance
             textBox_telephone.Text = "";
             numericUpDown_total.Value = 0;
             textBox_comment.Text = "";
+            dataGridView1.Rows.Clear();
             groupBox1.Text = "公司信息";
             groupBox1.ForeColor = Color.FromName("InactiveCaption");
 
             // 取公司信息
             // 按名称降序
             dsCompany = Form_Main._Sql.GetDataSet(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "*", "Table_Company", "id > 0 order by name desc", 1);
+            if (dsCompany == null)
+            { MessageBox.Show("数据库表Table_Company读取错误！"); return; }
             // 升序加入选项
             for (int i = 0; i < dsCompany.Tables[0].Rows.Count; i++)
             {
@@ -49,8 +52,12 @@ namespace MyFinance
             }
             // 取投资项备用
             dsProject = Form_Main._Sql.GetDataSet(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "*", "Table_Project", "id > 0", 1);
+            if (dsProject == null)
+            { MessageBox.Show("数据库表Table_Project读取错误！"); return; }
             // 取投资关系备用
             dsInvest = Form_Main._Sql.GetDataSet(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "*", "Table_Invest", "id > 0", 1);
+            if (dsInvest == null)
+            { MessageBox.Show("数据库表Table_Invest读取错误！"); return; }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -68,6 +75,8 @@ namespace MyFinance
 
             // 根据公司id查找所经营的投资项目信息
             DataRow[] projects = dsProject.Tables[0].Select("company = " + company[0]["id"].ToString());
+            if (projects == null)
+            { MessageBox.Show("数据库表Table_Project查询错误！"); return; }
             dataGridView1.Rows.Clear();
             if (projects.Length == 0) return;
 
@@ -83,9 +92,9 @@ namespace MyFinance
                 dataGridView1.Rows[i].Cells[1].Value = money;
                 numericUpDown_total.Value += money;
                 // 回报率
-                dataGridView1.Rows[i].Cells[2].Value = row["yield"].ToString();
+                dataGridView1.Rows[i].Cells[2].Value = (float.Parse(row["yield"].ToString()) * 100).ToString() + "%";
                 // 结息日
-                dataGridView1.Rows[i].Cells[3].Value = DataType.Get_SettleType(int.Parse(row["settle_type"].ToString())) + ":" + DateTime.Parse(row["settle_date"].ToString()).Day + "日";
+                dataGridView1.Rows[i].Cells[3].Value = DataType.Get_SettleType(int.Parse(row["settle_type"].ToString())) + ":第" + row["settle_date"].ToString() + "日";
                 // 时间窗
                 dataGridView1.Rows[i].Cells[4].Value = DateTime.Parse(row["start_date"].ToString()).ToShortDateString() + " - " + DateTime.Parse(row["end_date"].ToString()).ToShortDateString();
                 // 备注
@@ -98,7 +107,8 @@ namespace MyFinance
         {
             groupBox1.Text = "请输入新公司信息";
             groupBox1.ForeColor = Color.Red;
-            
+
+            comboBox1.Items.Clear();
             textBox_company.Text = "";
             textBox_contact.Text = "";
             textBox_telephone.Text = "";
@@ -118,13 +128,22 @@ namespace MyFinance
             {
                 if (comboBox1.SelectedItem == null)
                 {
-                    MessageBox.Show("请选择要删除的公司！", "删除新公司错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("请选择要删除的公司！", "删除公司错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 else
                 {
                     if (DialogResult.Yes == MessageBox.Show("确认删除公司: " + textBox_company.Text + " ?", "删除公司", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                     {
+                        // 检查该公司是否有相关投资项目存在
+                        // 若有 需先删除所包含的投资项目
+                        // 再删除公司
+                        if (dataGridView1.Rows.Count > 0)
+                        {
+                            MessageBox.Show("删除公司失败！\n\n请先删除 " + comboBox1.SelectedItem.ToString() + " 公司所含投资项目!", "删除公司失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+
                         if (Form_Main._Sql.DelRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Company",
                                                     "name='" + comboBox1.SelectedItem.ToString() + "'",
                                                     1))
@@ -171,7 +190,7 @@ namespace MyFinance
                         Form_Company_Load(this, null);
                     }
                     else
-                    { MessageBox.Show("数据库写入异常！", "添加新公司错误", MessageBoxButtons.OK, MessageBoxIcon.Error); }                    
+                    { MessageBox.Show("数据库写入异常！", "添加新公司错误", MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }
             }
             else if (comboBox1.SelectedItem != null) // 更新已有公司
