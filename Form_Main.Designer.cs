@@ -101,8 +101,9 @@
             this.button_nextyear = new System.Windows.Forms.Button();
             this.button_lastyear = new System.Windows.Forms.Button();
             this.tabControl_view = new System.Windows.Forms.TabControl();
-            this.button_save = new System.Windows.Forms.Button();
+            this.button_sync = new System.Windows.Forms.Button();
             this.button_quit = new System.Windows.Forms.Button();
+            this.button_save = new System.Windows.Forms.Button();
             this.tabPage_day.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_day)).BeginInit();
             this.tabPage_year.SuspendLayout();
@@ -115,7 +116,6 @@
             // button_invest
             // 
             this.button_invest.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button_invest.FlatAppearance.BorderSize = 0;
             this.button_invest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.button_invest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_invest.Image = global::MyFinance.Properties.Resources.invest;
@@ -132,7 +132,6 @@
             // button_partner
             // 
             this.button_partner.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button_partner.FlatAppearance.BorderSize = 0;
             this.button_partner.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.button_partner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_partner.Image = global::MyFinance.Properties.Resources.partner;
@@ -149,7 +148,6 @@
             // button_company
             // 
             this.button_company.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button_company.FlatAppearance.BorderSize = 0;
             this.button_company.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.button_company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_company.Image = global::MyFinance.Properties.Resources.company;
@@ -555,6 +553,8 @@
             // 
             // dataGridView_year
             // 
+            this.dataGridView_year.AllowUserToAddRows = false;
+            this.dataGridView_year.AllowUserToDeleteRows = false;
             this.dataGridView_year.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView_year.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column44,
@@ -842,37 +842,52 @@
             this.tabControl_view.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl_view.TabIndex = 1;
             // 
-            // button_save
+            // button_sync
             // 
-            this.button_save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
-            this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_save.Image = global::MyFinance.Properties.Resources.ok;
-            this.button_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_save.Location = new System.Drawing.Point(683, 500);
-            this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(100, 30);
-            this.button_save.TabIndex = 5;
-            this.button_save.Text = "保 存 ";
-            this.button_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_save.UseVisualStyleBackColor = true;
-            this.button_save.Click += new System.EventHandler(this.button_save_Click);
+            this.button_sync.BackColor = System.Drawing.Color.White;
+            this.button_sync.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_sync.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button_sync.Image = global::MyFinance.Properties.Resources.sync;
+            this.button_sync.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_sync.Location = new System.Drawing.Point(683, 494);
+            this.button_sync.Name = "button_sync";
+            this.button_sync.Size = new System.Drawing.Size(100, 40);
+            this.button_sync.TabIndex = 5;
+            this.button_sync.Text = "重新载入";
+            this.button_sync.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_sync.UseVisualStyleBackColor = false;
             // 
             // button_quit
             // 
+            this.button_quit.BackColor = System.Drawing.Color.White;
             this.button_quit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button_quit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SpringGreen;
-            this.button_quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_quit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_quit.Image = global::MyFinance.Properties.Resources.quit;
             this.button_quit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_quit.Location = new System.Drawing.Point(789, 500);
+            this.button_quit.Location = new System.Drawing.Point(789, 494);
             this.button_quit.Name = "button_quit";
-            this.button_quit.Size = new System.Drawing.Size(100, 30);
+            this.button_quit.Size = new System.Drawing.Size(100, 40);
             this.button_quit.TabIndex = 6;
             this.button_quit.Text = "退 出 ";
             this.button_quit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_quit.UseVisualStyleBackColor = true;
+            this.button_quit.UseVisualStyleBackColor = false;
             this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
+            // 
+            // button_save
+            // 
+            this.button_save.BackColor = System.Drawing.Color.White;
+            this.button_save.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.button_save.Image = global::MyFinance.Properties.Resources.ok;
+            this.button_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_save.Location = new System.Drawing.Point(577, 494);
+            this.button_save.Name = "button_save";
+            this.button_save.Size = new System.Drawing.Size(100, 40);
+            this.button_save.TabIndex = 5;
+            this.button_save.Text = "保 存 ";
+            this.button_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_save.UseVisualStyleBackColor = false;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // Form_Main
             // 
@@ -882,6 +897,7 @@
             this.ClientSize = new System.Drawing.Size(894, 535);
             this.Controls.Add(this.button_quit);
             this.Controls.Add(this.button_save);
+            this.Controls.Add(this.button_sync);
             this.Controls.Add(this.button_invest);
             this.Controls.Add(this.button_partner);
             this.Controls.Add(this.button_company);
@@ -955,7 +971,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column44;
-        private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button button_sync;
         private System.Windows.Forms.Button button_quit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column33;
@@ -981,6 +997,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column54;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column55;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column56;
+        private System.Windows.Forms.Button button_save;
 
 
 

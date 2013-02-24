@@ -105,15 +105,15 @@ namespace MyFinance
                     catch
                     { }
 
-                    if (Form_Main._Sql.AddRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Parnter",
-                                                "name, volumn, start_date, end_date, yield, settle_date, settle_type, comment",
+                    if (Form_Main._Sql.AddRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Partner",
+                                                "name, volume, start_date, end_date, yield, settle_date, settle_type, comment",
                                                 "'" + textBox_partner.Text +
                                                 "'," + numericUpDown_total.Value.ToString() +
                                                 ",'" + dateTimePicker_start.Value.ToShortDateString() +
                                                 "','" + dateTimePicker_end.Value.ToShortDateString() +
-                                                "'," + numericUpDown_field.Value.ToString() +
-                                                "," + comboBox_day.SelectedItem.ToString() +
-                                                "," + comboBox_cycle.SelectedItem.ToString() +
+                                                "'," + (numericUpDown_field.Value/100).ToString() +
+                                                "," + (comboBox_day.SelectedItem == null ? "1" : comboBox_day.SelectedItem.ToString()) +
+                                                "," + (checkBox_undefined.Checked ? "0" : (comboBox_cycle.SelectedIndex + 1).ToString()) +
                                                 ",'" + textBox_comment.Text + "'",
                                                 1))
                     {
@@ -130,12 +130,12 @@ namespace MyFinance
                 {
                     if (Form_Main._Sql.UpdaterDB(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Partner",
                                                 "name='" + textBox_partner.Text + "'," +
-                                                "volumn=" + numericUpDown_total.Value.ToString() + "," +
-                                                "start_date='" + dateTimePicker_start.Value.ToShortDateString() + "','" +
+                                                "volume=" + numericUpDown_total.Value.ToString() + "," +
+                                                "start_date='" + dateTimePicker_start.Value.ToShortDateString() + "'," +
                                                 "end_date='" + dateTimePicker_end.Value.ToShortDateString() + "'," +
-                                                "yield=" + numericUpDown_field.Value.ToString() + "," +
-                                                "settle_date=" + comboBox_day.SelectedItem.ToString() + "," +
-                                                "settle_type=" + comboBox_cycle.SelectedItem.ToString() + "," +
+                                                "yield=" + (numericUpDown_field.Value / 100).ToString() + "," +
+                                                "settle_date=" + (comboBox_day.SelectedItem == null ? "1" : comboBox_day.SelectedItem.ToString()) + "," +
+                                                "settle_type=" + (checkBox_undefined.Checked ? "0" : (comboBox_cycle.SelectedIndex + 1).ToString()) + "," +
                                                 "comment='" + textBox_comment.Text + "'",
                                                 "name='" + comboBox_partner.SelectedItem.ToString() + "'",
                                                 1))

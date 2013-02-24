@@ -47,13 +47,16 @@ namespace MyFinance
             GetPrivateProfileString("SqlServer", "Password", "", temp, 255, ConfigFileName);
             Password = temp.ToString();
 
-            DbHost = Dns.GetHostName() + "\\" + DbHost;
             // 验证数据库连接
             if(!_Sql.bOpen(DbHost, DbName, User, Password, 1))
             {
                 MessageBox.Show("数据库连接错误 :(\n\n请检查数据库配置，并确保./config/config.ini配置正确", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
             }
+
+            dataGridView_year.Rows.Clear();
+            dataGridView_year.Rows.Add();
+            dataGridView_year.Rows[0].Height = dataGridView_year.Height - 75;
         }
 
         private void button_company_Click(object sender, EventArgs e)

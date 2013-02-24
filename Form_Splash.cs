@@ -21,6 +21,8 @@ namespace MyFinance
         public Form_Splash()
         {
             InitializeComponent();
+
+            this.Text = "Form_Splash";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
