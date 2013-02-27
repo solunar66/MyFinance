@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox_undefined = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox_day = new System.Windows.Forms.ComboBox();
@@ -52,6 +47,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown_total = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox_comment = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBox_partner = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button_save = new System.Windows.Forms.Button();
@@ -60,8 +57,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_new = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox_comment = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_field)).BeginInit();
@@ -127,34 +127,6 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(596, 156);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "投资项目";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "所属公司";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "项目回报率";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "资金量";
-            this.Column3.Name = "Column3";
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle6.NullValue = "无备注";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column5.HeaderText = "备注";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // label11
             // 
@@ -342,6 +314,23 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "金额:";
             // 
+            // textBox_comment
+            // 
+            this.textBox_comment.Location = new System.Drawing.Point(89, 212);
+            this.textBox_comment.Name = "textBox_comment";
+            this.textBox_comment.Size = new System.Drawing.Size(488, 21);
+            this.textBox_comment.TabIndex = 9;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label12.Location = new System.Drawing.Point(54, 215);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 12);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "备注:";
+            // 
             // textBox_partner
             // 
             this.textBox_partner.Location = new System.Drawing.Point(89, 38);
@@ -418,22 +407,34 @@
             this.button_delete.UseVisualStyleBackColor = true;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // label12
+            // Column1
             // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(54, 215);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 12);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "备注:";
+            this.Column1.HeaderText = "投资项目";
+            this.Column1.Name = "Column1";
             // 
-            // textBox_comment
+            // Column2
             // 
-            this.textBox_comment.Location = new System.Drawing.Point(89, 212);
-            this.textBox_comment.Name = "textBox_comment";
-            this.textBox_comment.Size = new System.Drawing.Size(488, 21);
-            this.textBox_comment.TabIndex = 9;
+            this.Column2.HeaderText = "所属公司";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "项目回报率";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "资金量";
+            this.Column3.Name = "Column3";
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle1.NullValue = "无备注";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column5.HeaderText = "备注";
+            this.Column5.Name = "Column5";
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.Width = 200;
             // 
             // Form_Partner
             // 
@@ -494,12 +495,12 @@
         private System.Windows.Forms.Button button_new;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.CheckBox checkBox_undefined;
+        private System.Windows.Forms.TextBox textBox_comment;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.TextBox textBox_comment;
-        private System.Windows.Forms.Label label12;
     }
 }
