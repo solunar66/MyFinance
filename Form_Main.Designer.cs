@@ -69,6 +69,8 @@
             this.button_nextmonth = new System.Windows.Forms.Button();
             this.button_lastmonth = new System.Windows.Forms.Button();
             this.tabPage_year = new System.Windows.Forms.TabPage();
+            this.button_lastdecade = new System.Windows.Forms.Button();
+            this.button_nextdecade = new System.Windows.Forms.Button();
             this.dataGridView_year = new System.Windows.Forms.DataGridView();
             this.Column44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,11 +122,11 @@
             this.button_invest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_invest.Image = global::MyFinance.Properties.Resources.invest;
             this.button_invest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_invest.Location = new System.Drawing.Point(232, 500);
+            this.button_invest.Location = new System.Drawing.Point(232, 542);
             this.button_invest.Name = "button_invest";
-            this.button_invest.Size = new System.Drawing.Size(100, 30);
+            this.button_invest.Size = new System.Drawing.Size(160, 33);
             this.button_invest.TabIndex = 6;
-            this.button_invest.Text = "项目信息";
+            this.button_invest.Text = "项目及投资关系信息";
             this.button_invest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_invest.UseVisualStyleBackColor = true;
             this.button_invest.Click += new System.EventHandler(this.button_invest_Click);
@@ -136,9 +138,9 @@
             this.button_partner.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_partner.Image = global::MyFinance.Properties.Resources.partner;
             this.button_partner.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_partner.Location = new System.Drawing.Point(4, 500);
+            this.button_partner.Location = new System.Drawing.Point(4, 542);
             this.button_partner.Name = "button_partner";
-            this.button_partner.Size = new System.Drawing.Size(100, 30);
+            this.button_partner.Size = new System.Drawing.Size(100, 33);
             this.button_partner.TabIndex = 5;
             this.button_partner.Text = "股东信息";
             this.button_partner.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -152,9 +154,9 @@
             this.button_company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_company.Image = global::MyFinance.Properties.Resources.company;
             this.button_company.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_company.Location = new System.Drawing.Point(118, 500);
+            this.button_company.Location = new System.Drawing.Point(118, 542);
             this.button_company.Name = "button_company";
-            this.button_company.Size = new System.Drawing.Size(100, 30);
+            this.button_company.Size = new System.Drawing.Size(100, 33);
             this.button_company.TabIndex = 4;
             this.button_company.Text = "公司信息";
             this.button_company.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -167,10 +169,10 @@
             this.tabPage_day.Controls.Add(this.dataGridView_day);
             this.tabPage_day.Controls.Add(this.button_nextmonth);
             this.tabPage_day.Controls.Add(this.button_lastmonth);
-            this.tabPage_day.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_day.Location = new System.Drawing.Point(4, 22);
             this.tabPage_day.Name = "tabPage_day";
             this.tabPage_day.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_day.Size = new System.Drawing.Size(886, 469);
+            this.tabPage_day.Size = new System.Drawing.Size(886, 514);
             this.tabPage_day.TabIndex = 3;
             this.tabPage_day.Text = "日视图";
             this.tabPage_day.UseVisualStyleBackColor = true;
@@ -182,12 +184,13 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker_month.CustomFormat = "yyyy年MM月";
             this.dateTimePicker_month.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_month.Location = new System.Drawing.Point(398, 8);
+            this.dateTimePicker_month.Location = new System.Drawing.Point(398, 9);
             this.dateTimePicker_month.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_month.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_month.Name = "dateTimePicker_month";
-            this.dateTimePicker_month.Size = new System.Drawing.Size(90, 21);
+            this.dateTimePicker_month.Size = new System.Drawing.Size(90, 20);
             this.dateTimePicker_month.TabIndex = 5;
+            this.dateTimePicker_month.ValueChanged += new System.EventHandler(this.dateTimePicker_month_ValueChanged);
             // 
             // dataGridView_day
             // 
@@ -228,12 +231,12 @@
             this.Column29,
             this.Column30,
             this.Column31});
-            this.dataGridView_day.Location = new System.Drawing.Point(6, 33);
+            this.dataGridView_day.Location = new System.Drawing.Point(6, 36);
             this.dataGridView_day.Name = "dataGridView_day";
             this.dataGridView_day.RowHeadersWidth = 55;
             this.dataGridView_day.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView_day.RowTemplate.Height = 50;
-            this.dataGridView_day.Size = new System.Drawing.Size(874, 433);
+            this.dataGridView_day.Size = new System.Drawing.Size(874, 469);
             this.dataGridView_day.TabIndex = 4;
             this.dataGridView_day.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_day_RowPostPaint);
             // 
@@ -518,38 +521,64 @@
             // 
             // button_nextmonth
             // 
-            this.button_nextmonth.FlatAppearance.BorderSize = 0;
             this.button_nextmonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.button_nextmonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_nextmonth.Location = new System.Drawing.Point(780, 6);
+            this.button_nextmonth.Location = new System.Drawing.Point(780, 7);
             this.button_nextmonth.Name = "button_nextmonth";
-            this.button_nextmonth.Size = new System.Drawing.Size(100, 23);
+            this.button_nextmonth.Size = new System.Drawing.Size(100, 25);
             this.button_nextmonth.TabIndex = 1;
             this.button_nextmonth.Text = "下一月 >>";
             this.button_nextmonth.UseVisualStyleBackColor = true;
+            this.button_nextmonth.Click += new System.EventHandler(this.button_nextmonth_Click);
             // 
             // button_lastmonth
             // 
-            this.button_lastmonth.FlatAppearance.BorderSize = 0;
             this.button_lastmonth.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.button_lastmonth.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_lastmonth.Location = new System.Drawing.Point(4, 6);
+            this.button_lastmonth.Location = new System.Drawing.Point(4, 7);
             this.button_lastmonth.Name = "button_lastmonth";
-            this.button_lastmonth.Size = new System.Drawing.Size(100, 23);
+            this.button_lastmonth.Size = new System.Drawing.Size(100, 25);
             this.button_lastmonth.TabIndex = 1;
             this.button_lastmonth.Text = "<< 上一月";
             this.button_lastmonth.UseVisualStyleBackColor = true;
+            this.button_lastmonth.Click += new System.EventHandler(this.button_lastmonth_Click);
             // 
             // tabPage_year
             // 
+            this.tabPage_year.Controls.Add(this.button_lastdecade);
+            this.tabPage_year.Controls.Add(this.button_nextdecade);
             this.tabPage_year.Controls.Add(this.dataGridView_year);
-            this.tabPage_year.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_year.Location = new System.Drawing.Point(4, 22);
             this.tabPage_year.Name = "tabPage_year";
             this.tabPage_year.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_year.Size = new System.Drawing.Size(886, 469);
+            this.tabPage_year.Size = new System.Drawing.Size(886, 514);
             this.tabPage_year.TabIndex = 1;
             this.tabPage_year.Text = "年视图";
             this.tabPage_year.UseVisualStyleBackColor = true;
+            // 
+            // button_lastdecade
+            // 
+            this.button_lastdecade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_lastdecade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_lastdecade.Location = new System.Drawing.Point(3, 3);
+            this.button_lastdecade.Name = "button_lastdecade";
+            this.button_lastdecade.Size = new System.Drawing.Size(100, 25);
+            this.button_lastdecade.TabIndex = 3;
+            this.button_lastdecade.Text = "<< 上十年";
+            this.button_lastdecade.UseVisualStyleBackColor = true;
+            this.button_lastdecade.Click += new System.EventHandler(this.button_lastdecade_Click);
+            // 
+            // button_nextdecade
+            // 
+            this.button_nextdecade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
+            this.button_nextdecade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_nextdecade.Location = new System.Drawing.Point(783, 3);
+            this.button_nextdecade.Name = "button_nextdecade";
+            this.button_nextdecade.Size = new System.Drawing.Size(100, 25);
+            this.button_nextdecade.TabIndex = 2;
+            this.button_nextdecade.Text = "下十年 >>";
+            this.button_nextdecade.UseVisualStyleBackColor = true;
+            this.button_nextdecade.Click += new System.EventHandler(this.button_nextdecade_Click);
             // 
             // dataGridView_year
             // 
@@ -570,11 +599,11 @@
             this.Column54,
             this.Column55,
             this.Column56});
-            this.dataGridView_year.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_year.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView_year.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView_year.Location = new System.Drawing.Point(3, 33);
             this.dataGridView_year.Name = "dataGridView_year";
             this.dataGridView_year.RowTemplate.Height = 50;
-            this.dataGridView_year.Size = new System.Drawing.Size(880, 463);
+            this.dataGridView_year.Size = new System.Drawing.Size(880, 478);
             this.dataGridView_year.TabIndex = 0;
             // 
             // Column44
@@ -648,10 +677,10 @@
             this.tabPage_month.Controls.Add(this.dataGridView_month);
             this.tabPage_month.Controls.Add(this.button_nextyear);
             this.tabPage_month.Controls.Add(this.button_lastyear);
-            this.tabPage_month.Location = new System.Drawing.Point(4, 25);
+            this.tabPage_month.Location = new System.Drawing.Point(4, 22);
             this.tabPage_month.Name = "tabPage_month";
             this.tabPage_month.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_month.Size = new System.Drawing.Size(886, 469);
+            this.tabPage_month.Size = new System.Drawing.Size(886, 514);
             this.tabPage_month.TabIndex = 0;
             this.tabPage_month.Text = "月视图";
             this.tabPage_month.UseVisualStyleBackColor = true;
@@ -660,12 +689,13 @@
             // 
             this.dateTimePicker_year.CustomFormat = "yyyy年";
             this.dateTimePicker_year.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker_year.Location = new System.Drawing.Point(406, 8);
+            this.dateTimePicker_year.Location = new System.Drawing.Point(406, 9);
             this.dateTimePicker_year.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker_year.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker_year.Name = "dateTimePicker_year";
-            this.dateTimePicker_year.Size = new System.Drawing.Size(75, 21);
+            this.dateTimePicker_year.Size = new System.Drawing.Size(75, 20);
             this.dateTimePicker_year.TabIndex = 5;
+            this.dateTimePicker_year.ValueChanged += new System.EventHandler(this.dateTimePicker_year_ValueChanged);
             // 
             // dataGridView_month
             // 
@@ -686,13 +716,13 @@
             this.Column41,
             this.Column42,
             this.Column43});
-            this.dataGridView_month.Location = new System.Drawing.Point(6, 33);
+            this.dataGridView_month.Location = new System.Drawing.Point(6, 36);
             this.dataGridView_month.Name = "dataGridView_month";
             this.dataGridView_month.ReadOnly = true;
             this.dataGridView_month.RowHeadersWidth = 60;
             this.dataGridView_month.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView_month.RowTemplate.Height = 50;
-            this.dataGridView_month.Size = new System.Drawing.Size(872, 433);
+            this.dataGridView_month.Size = new System.Drawing.Size(872, 469);
             this.dataGridView_month.TabIndex = 4;
             this.dataGridView_month.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView_month_RowPostPaint);
             // 
@@ -806,31 +836,30 @@
             // 
             // button_nextyear
             // 
-            this.button_nextyear.FlatAppearance.BorderSize = 0;
             this.button_nextyear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.button_nextyear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_nextyear.Location = new System.Drawing.Point(778, 6);
+            this.button_nextyear.Location = new System.Drawing.Point(778, 7);
             this.button_nextyear.Name = "button_nextyear";
-            this.button_nextyear.Size = new System.Drawing.Size(100, 23);
+            this.button_nextyear.Size = new System.Drawing.Size(100, 25);
             this.button_nextyear.TabIndex = 1;
             this.button_nextyear.Text = "下一年 >>";
             this.button_nextyear.UseVisualStyleBackColor = true;
+            this.button_nextyear.Click += new System.EventHandler(this.button_nextyear_Click);
             // 
             // button_lastyear
             // 
-            this.button_lastyear.FlatAppearance.BorderSize = 0;
             this.button_lastyear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua;
             this.button_lastyear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_lastyear.Location = new System.Drawing.Point(4, 6);
+            this.button_lastyear.Location = new System.Drawing.Point(4, 7);
             this.button_lastyear.Name = "button_lastyear";
-            this.button_lastyear.Size = new System.Drawing.Size(100, 23);
+            this.button_lastyear.Size = new System.Drawing.Size(100, 25);
             this.button_lastyear.TabIndex = 1;
             this.button_lastyear.Text = "<< 上一年";
             this.button_lastyear.UseVisualStyleBackColor = true;
+            this.button_lastyear.Click += new System.EventHandler(this.button_lastyear_Click);
             // 
             // tabControl_view
             // 
-            this.tabControl_view.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl_view.Controls.Add(this.tabPage_day);
             this.tabControl_view.Controls.Add(this.tabPage_month);
             this.tabControl_view.Controls.Add(this.tabPage_year);
@@ -838,7 +867,7 @@
             this.tabControl_view.Location = new System.Drawing.Point(0, 0);
             this.tabControl_view.Name = "tabControl_view";
             this.tabControl_view.SelectedIndex = 0;
-            this.tabControl_view.Size = new System.Drawing.Size(894, 498);
+            this.tabControl_view.Size = new System.Drawing.Size(894, 540);
             this.tabControl_view.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl_view.TabIndex = 1;
             // 
@@ -849,9 +878,9 @@
             this.button_sync.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_sync.Image = global::MyFinance.Properties.Resources.sync;
             this.button_sync.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_sync.Location = new System.Drawing.Point(683, 494);
+            this.button_sync.Location = new System.Drawing.Point(683, 542);
             this.button_sync.Name = "button_sync";
-            this.button_sync.Size = new System.Drawing.Size(100, 40);
+            this.button_sync.Size = new System.Drawing.Size(100, 33);
             this.button_sync.TabIndex = 5;
             this.button_sync.Text = "重新载入";
             this.button_sync.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -864,11 +893,11 @@
             this.button_quit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_quit.Image = global::MyFinance.Properties.Resources.quit;
             this.button_quit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_quit.Location = new System.Drawing.Point(789, 494);
+            this.button_quit.Location = new System.Drawing.Point(790, 542);
             this.button_quit.Name = "button_quit";
-            this.button_quit.Size = new System.Drawing.Size(100, 40);
+            this.button_quit.Size = new System.Drawing.Size(100, 33);
             this.button_quit.TabIndex = 6;
-            this.button_quit.Text = "退 出 ";
+            this.button_quit.Text = "退 出  ";
             this.button_quit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_quit.UseVisualStyleBackColor = false;
             this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
@@ -880,21 +909,21 @@
             this.button_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button_save.Image = global::MyFinance.Properties.Resources.ok;
             this.button_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_save.Location = new System.Drawing.Point(577, 494);
+            this.button_save.Location = new System.Drawing.Point(577, 542);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(100, 40);
+            this.button_save.Size = new System.Drawing.Size(100, 33);
             this.button_save.TabIndex = 5;
-            this.button_save.Text = "保 存 ";
+            this.button_save.Text = "保 存  ";
             this.button_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_save.UseVisualStyleBackColor = false;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // Form_Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(894, 535);
+            this.ClientSize = new System.Drawing.Size(894, 580);
             this.Controls.Add(this.button_quit);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_sync);
@@ -998,6 +1027,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column55;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column56;
         private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Button button_lastdecade;
+        private System.Windows.Forms.Button button_nextdecade;
 
 
 

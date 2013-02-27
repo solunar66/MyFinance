@@ -105,7 +105,7 @@ namespace MyFinance
 
         private void button_New_Click(object sender, EventArgs e)
         {
-            groupBox1.Text = "请输入新公司信息";
+            groupBox1.Text = "请输入新公司信息：";
             groupBox1.ForeColor = Color.Red;
 
             comboBox1.Items.Clear();
@@ -171,16 +171,12 @@ namespace MyFinance
                 }
                 if (DialogResult.Yes == MessageBox.Show("确认添加新公司: " + textBox_company.Text + " ?", "添加新公司", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    try
+                    if (dsCompany.Tables[0].Select("name = '" + textBox_company.Text + "'").Length != 0)
                     {
-                        dsCompany.Tables[0].Select("name = " + textBox_company.Text);
                         MessageBox.Show("新公司名称已存在！", "添加新公司错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         textBox_company.Select();
                         return;
                     }
-                    catch
-                    { }
-                    
                     if (Form_Main._Sql.AddRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Company",
                                                 "name,contact,telephone,invests,comment",
                                                 "'" + textBox_company.Text + "','" + textBox_contact.Text + "','" + textBox_telephone.Text + "','','" + textBox_comment.Text + "'",
@@ -197,6 +193,12 @@ namespace MyFinance
             {
                 if (DialogResult.Yes == MessageBox.Show("确认更新公司信息:  " + comboBox1.SelectedItem.ToString() + "  ?", "更新公司信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
+                    if (dsCompany.Tables[0].Select("name = '" + textBox_company.Text + "'").Length != 0)
+                    {
+                        MessageBox.Show("公司名称存在重复！", "更新公司错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox_company.Select();
+                        return;
+                    }
                     if (Form_Main._Sql.UpdaterDB(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Company",
                                                 "name='" + textBox_company.Text + "',contact='" + textBox_contact.Text + "',telephone='" + textBox_telephone.Text + "',comment='" + textBox_comment.Text + "'",
                                                 "name='" + comboBox1.SelectedItem.ToString() + "'",

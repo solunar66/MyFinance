@@ -36,8 +36,10 @@ namespace MyFinance
             textBox_partner.Text = "";
             numericUpDown_total.Value = 0;
             dateTimePicker_start.Value = new DateTime(2000, 01, 01);
-            dateTimePicker_end.Value = new DateTime(2000, 01, 01);
+            dateTimePicker_end.Value = new DateTime(2100, 12, 31);
             numericUpDown_field.Value = 0;
+            comboBox_cycle.SelectedIndex = 0;
+            comboBox_day.SelectedIndex = 0;
             checkBox_undefined.Checked = false;
             textBox_comment.Text = "";
             groupBox1.Text = "股东信息";
@@ -69,7 +71,7 @@ namespace MyFinance
 
         private void button_new_Click(object sender, EventArgs e)
         {
-            groupBox1.Text = "新建股东信息";
+            groupBox1.Text = "请输入新建股东信息：";
             groupBox1.ForeColor = Color.Red;
 
             comboBox_partner.Items.Clear();
@@ -95,16 +97,12 @@ namespace MyFinance
                 }
                 if (DialogResult.Yes == MessageBox.Show("确认添加新股东: " + textBox_partner.Text + " ?", "添加新股东", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    try
+                    if (dsPartner.Tables[0].Select("name = '" + textBox_partner.Text + "'").Length != 0)
                     {
-                        dsPartner.Tables[0].Select("name = " + textBox_partner.Text);
                         MessageBox.Show("已存在同名股东！", "添加新股东错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         textBox_partner.Select();
                         return;
                     }
-                    catch
-                    { }
-
                     if (Form_Main._Sql.AddRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Partner",
                                                 "name, volume, start_date, end_date, yield, settle_date, settle_type, comment",
                                                 "'" + textBox_partner.Text +
@@ -128,6 +126,15 @@ namespace MyFinance
             {
                 if (DialogResult.Yes == MessageBox.Show("确认更新股东信息:  " + comboBox_partner.SelectedItem.ToString() + "  ?", "更新股东信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
+                    try
+                    {
+                        dsPartner.Tables[0].Select("name = " + textBox_partner.Text);
+                        MessageBox.Show("股东姓名存在重复！", "更新股东错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox_partner.Select();
+                        return;
+                    }
+                    catch
+                    { }
                     if (Form_Main._Sql.UpdaterDB(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Partner",
                                                 "name='" + textBox_partner.Text + "'," +
                                                 "volume=" + numericUpDown_total.Value.ToString() + "," +
@@ -140,7 +147,7 @@ namespace MyFinance
                                                 "name='" + comboBox_partner.SelectedItem.ToString() + "'",
                                                 1))
                     {
-                        MessageBox.Show("" + textBox_partner.Text + " 股东信息更新添加成功！", "更新股东成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("" + textBox_partner.Text + " 股东信息更新成功！", "更新股东成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Form_Partner_Load(this, null);
                     }
                     else

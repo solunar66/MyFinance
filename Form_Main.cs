@@ -29,8 +29,8 @@ namespace MyFinance
         {
             InitializeComponent();
 
-            dataGridView_day.Rows.Add(4);
-            dataGridView_month.Rows.Add(4);
+            dataGridView_day.Rows.Add(5);
+            dataGridView_month.Rows.Add(5);
 
             tabControl_view.SelectedIndex = 1;
         }
@@ -52,6 +52,7 @@ namespace MyFinance
             {
                 MessageBox.Show("数据库连接错误 :(\n\n请检查数据库配置，并确保./config/config.ini配置正确", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
+                return;
             }
 
             dataGridView_year.Rows.Clear();
@@ -79,14 +80,7 @@ namespace MyFinance
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            /*
-            Sql sql = new Sql();
-            SqlConnection conn = new SqlConnection("data source=SAMUEL-PC\\SQLEXPRESS;initial catalog=MyFinance;User ID=sa;Password=1;");
-            conn.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Table_Comment", conn);
-            DataSet ds = new DataSet("test");
-            da.Fill(ds, "Table_Comment");
-            */
+            
         }
 
         private void button_quit_Click(object sender, EventArgs e)
@@ -110,6 +104,9 @@ namespace MyFinance
                 case 3:
                     e.Graphics.DrawString("余额", new Font("宋体", 9), Brushes.Black, e.RowBounds.Left + 15, e.RowBounds.Top + 5);
                     break;
+                case 4:
+                    e.Graphics.DrawString("备注", new Font("宋体", 9), Brushes.Black, e.RowBounds.Left + 15, e.RowBounds.Top + 5);
+                    break;
                 default:
                     break;
             }
@@ -123,6 +120,46 @@ namespace MyFinance
         private void dataGridView_day_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             RowHeaderPaint(e);
+        }
+
+        private void dateTimePicker_month_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_lastmonth_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_nextmonth_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker_year_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_lastyear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_nextyear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_lastdecade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_nextdecade_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

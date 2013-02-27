@@ -28,126 +28,225 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_undefined = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除本条信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_day = new System.Windows.Forms.ComboBox();
+            this.comboBox_cycle = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.dateTimePicker_end = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_start = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDown_yield = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown_volume = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_telephone = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_contact = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_project = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button_quit = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_company = new System.Windows.Forms.ComboBox();
             this.button_save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox_project = new System.Windows.Forms.ComboBox();
             this.button_New = new System.Windows.Forms.Button();
             this.button_Del = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox_comment = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_yield)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_volume)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox_undefined);
+            this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBox_day);
+            this.groupBox1.Controls.Add(this.comboBox_cycle);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
+            this.groupBox1.Controls.Add(this.dateTimePicker_end);
+            this.groupBox1.Controls.Add(this.dateTimePicker_start);
+            this.groupBox1.Controls.Add(this.numericUpDown_yield);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.numericUpDown_volume);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.textBox_telephone);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox_comment);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox_contact);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.textBox_project);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.groupBox1.Location = new System.Drawing.Point(11, 38);
+            this.groupBox1.Location = new System.Drawing.Point(11, 41);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(610, 401);
+            this.groupBox1.Size = new System.Drawing.Size(610, 467);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "股东信息";
+            this.groupBox1.Text = "项目信息";
+            // 
+            // checkBox_undefined
+            // 
+            this.checkBox_undefined.AutoSize = true;
+            this.checkBox_undefined.Location = new System.Drawing.Point(425, 133);
+            this.checkBox_undefined.Name = "checkBox_undefined";
+            this.checkBox_undefined.Size = new System.Drawing.Size(86, 17);
+            this.checkBox_undefined.TabIndex = 15;
+            this.checkBox_undefined.Text = "不定期付息";
+            this.checkBox_undefined.UseVisualStyleBackColor = true;
+            this.checkBox_undefined.CheckedChanged += new System.EventHandler(this.checkBox_undefined_CheckedChanged);
+            // 
+            // label16
+            // 
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label16.Location = new System.Drawing.Point(9, 231);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(595, 18);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "编 辑 股 东 投 资 关 系 ：";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.Column2,
+            this.Column5,
+            this.Column7,
             this.Column4,
             this.Column3,
-            this.Column5,
             this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(32, 263);
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 249);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(547, 132);
+            this.dataGridView1.Size = new System.Drawing.Size(595, 242);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
+            this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
+            // 
+            // Column2
+            // 
+            dataGridViewCellStyle11.NullValue = "0";
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle11;
+            this.Column2.HeaderText = "本项目所投资金(万)";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 140;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle12.NullValue = "2000-01-01";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle12;
+            this.Column5.HeaderText = "起始时间";
+            this.Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            dataGridViewCellStyle13.NullValue = "2100-12-31";
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Column7.HeaderText = "终止时间";
+            this.Column7.Name = "Column7";
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle14;
+            this.Column4.HeaderText = "股东付息日";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle15;
+            this.Column3.HeaderText = "股东回报率";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "备注";
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.Width = 200;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.删除本条信息ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 26);
+            // 
+            // 删除本条信息ToolStripMenuItem
+            // 
+            this.删除本条信息ToolStripMenuItem.Name = "删除本条信息ToolStripMenuItem";
+            this.删除本条信息ToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.删除本条信息ToolStripMenuItem.Text = "删除本条信息";
+            this.删除本条信息ToolStripMenuItem.Click += new System.EventHandler(this.删除本条信息ToolStripMenuItem_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(287, 175);
+            this.label11.Location = new System.Drawing.Point(287, 135);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 11;
-            this.label11.Text = "月的第";
+            this.label11.Text = "的第";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label10.Location = new System.Drawing.Point(400, 175);
+            this.label10.Location = new System.Drawing.Point(385, 135);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(17, 12);
+            this.label10.Size = new System.Drawing.Size(19, 13);
             this.label10.TabIndex = 10;
             this.label10.Text = "日";
             // 
-            // comboBox3
+            // comboBox_day
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBox_day.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_day.FormattingEnabled = true;
+            this.comboBox_day.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -179,26 +278,32 @@
             "29",
             "30",
             "31"});
-            this.comboBox3.Location = new System.Drawing.Point(334, 172);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(60, 20);
-            this.comboBox3.TabIndex = 9;
+            this.comboBox_day.Location = new System.Drawing.Point(321, 131);
+            this.comboBox_day.Name = "comboBox_day";
+            this.comboBox_day.Size = new System.Drawing.Size(60, 21);
+            this.comboBox_day.TabIndex = 9;
             // 
-            // comboBox2
+            // comboBox_cycle
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(221, 172);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(60, 20);
-            this.comboBox2.TabIndex = 9;
+            this.comboBox_cycle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_cycle.FormattingEnabled = true;
+            this.comboBox_cycle.Items.AddRange(new object[] {
+            "月",
+            "季度",
+            "半年",
+            "年"});
+            this.comboBox_cycle.Location = new System.Drawing.Point(221, 131);
+            this.comboBox_cycle.Name = "comboBox_cycle";
+            this.comboBox_cycle.Size = new System.Drawing.Size(60, 21);
+            this.comboBox_cycle.TabIndex = 9;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(42, 175);
+            this.label9.Location = new System.Drawing.Point(42, 135);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(173, 12);
+            this.label9.Size = new System.Drawing.Size(169, 13);
             this.label9.TabIndex = 8;
             this.label9.Text = "付息日: 自使用周期开始起，每";
             // 
@@ -206,9 +311,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(419, 221);
+            this.label8.Location = new System.Drawing.Point(422, 172);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(11, 12);
+            this.label8.Size = new System.Drawing.Size(15, 13);
             this.label8.TabIndex = 7;
             this.label8.Text = "%";
             // 
@@ -216,9 +321,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(196, 219);
+            this.label7.Location = new System.Drawing.Point(205, 172);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 12);
+            this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 6;
             this.label7.Text = "万元";
             // 
@@ -226,9 +331,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(205, 130);
+            this.label5.Location = new System.Drawing.Point(212, 100);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(17, 12);
+            this.label5.Size = new System.Drawing.Size(19, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "至";
             // 
@@ -236,261 +341,227 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(30, 130);
+            this.label4.Location = new System.Drawing.Point(30, 100);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 12);
+            this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "资金周期:";
             // 
-            // dateTimePicker2
+            // dateTimePicker_end
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(228, 126);
-            this.dateTimePicker2.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker2.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(110, 21);
-            this.dateTimePicker2.TabIndex = 3;
+            this.dateTimePicker_end.Location = new System.Drawing.Point(249, 96);
+            this.dateTimePicker_end.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_end.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker_end.Name = "dateTimePicker_end";
+            this.dateTimePicker_end.Size = new System.Drawing.Size(110, 20);
+            this.dateTimePicker_end.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // dateTimePicker_start
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(89, 126);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(110, 21);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker_start.Location = new System.Drawing.Point(89, 96);
+            this.dateTimePicker_start.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker_start.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker_start.Name = "dateTimePicker_start";
+            this.dateTimePicker_start.Size = new System.Drawing.Size(110, 20);
+            this.dateTimePicker_start.TabIndex = 3;
             // 
-            // numericUpDown2
+            // numericUpDown_yield
             // 
-            this.numericUpDown2.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDown2.Location = new System.Drawing.Point(317, 217);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(100, 21);
-            this.numericUpDown2.TabIndex = 2;
+            this.numericUpDown_yield.Location = new System.Drawing.Point(321, 168);
+            this.numericUpDown_yield.Name = "numericUpDown_yield";
+            this.numericUpDown_yield.Size = new System.Drawing.Size(100, 20);
+            this.numericUpDown_yield.TabIndex = 2;
+            this.numericUpDown_yield.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(246, 221);
+            this.label6.Location = new System.Drawing.Point(246, 172);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 12);
+            this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "协议回报率:";
             // 
-            // numericUpDown1
+            // numericUpDown_volume
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(89, 215);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericUpDown_volume.Enabled = false;
+            this.numericUpDown_volume.Location = new System.Drawing.Point(89, 168);
+            this.numericUpDown_volume.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.ReadOnly = true;
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 21);
-            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown_volume.Name = "numericUpDown_volume";
+            this.numericUpDown_volume.Size = new System.Drawing.Size(110, 20);
+            this.numericUpDown_volume.TabIndex = 2;
+            this.numericUpDown_volume.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(42, 219);
+            this.label3.Location = new System.Drawing.Point(42, 172);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 12);
+            this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "总金额:";
             // 
-            // textBox4
+            // textBox_telephone
             // 
-            this.textBox4.Location = new System.Drawing.Point(425, 81);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 1;
+            this.textBox_telephone.Location = new System.Drawing.Point(249, 61);
+            this.textBox_telephone.Name = "textBox_telephone";
+            this.textBox_telephone.Size = new System.Drawing.Size(110, 20);
+            this.textBox_telephone.TabIndex = 1;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label12.Location = new System.Drawing.Point(388, 84);
+            this.label12.Location = new System.Drawing.Point(212, 64);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 12);
+            this.label12.Size = new System.Drawing.Size(34, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "电话:";
             // 
-            // textBox3
+            // textBox_contact
             // 
-            this.textBox3.Location = new System.Drawing.Point(264, 81);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 1;
+            this.textBox_contact.Location = new System.Drawing.Point(89, 61);
+            this.textBox_contact.Name = "textBox_contact";
+            this.textBox_contact.Size = new System.Drawing.Size(110, 20);
+            this.textBox_contact.TabIndex = 1;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label14.Location = new System.Drawing.Point(211, 84);
+            this.label14.Location = new System.Drawing.Point(42, 64);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 12);
+            this.label14.Size = new System.Drawing.Size(46, 13);
             this.label14.TabIndex = 0;
             this.label14.Text = "联系人:";
             // 
-            // textBox2
+            // textBox_project
             // 
-            this.textBox2.Location = new System.Drawing.Point(89, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(30, 84);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 12);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "所属公司:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(89, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 1;
+            this.textBox_project.Location = new System.Drawing.Point(89, 26);
+            this.textBox_project.Name = "textBox_project";
+            this.textBox_project.Size = new System.Drawing.Size(110, 20);
+            this.textBox_project.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(30, 41);
+            this.label2.Location = new System.Drawing.Point(30, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 12);
+            this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "项目名称:";
             // 
             // button_quit
             // 
-            this.button_quit.Location = new System.Drawing.Point(522, 445);
+            this.button_quit.Location = new System.Drawing.Point(522, 514);
             this.button_quit.Name = "button_quit";
-            this.button_quit.Size = new System.Drawing.Size(100, 35);
+            this.button_quit.Size = new System.Drawing.Size(100, 38);
             this.button_quit.TabIndex = 6;
             this.button_quit.Text = "退 出";
             this.button_quit.UseVisualStyleBackColor = true;
             this.button_quit.Click += new System.EventHandler(this.button_quit_Click);
             // 
-            // comboBox1
+            // comboBox_company
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(76, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(124, 20);
-            this.comboBox1.TabIndex = 7;
+            this.comboBox_company.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_company.FormattingEnabled = true;
+            this.comboBox_company.Location = new System.Drawing.Point(76, 13);
+            this.comboBox_company.Name = "comboBox_company";
+            this.comboBox_company.Size = new System.Drawing.Size(124, 21);
+            this.comboBox_company.TabIndex = 7;
+            this.comboBox_company.SelectedIndexChanged += new System.EventHandler(this.comboBox_company_SelectedIndexChanged);
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(416, 445);
+            this.button_save.Location = new System.Drawing.Point(416, 514);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(100, 35);
+            this.button_save.Size = new System.Drawing.Size(100, 38);
             this.button_save.TabIndex = 5;
             this.button_save.Text = "保 存";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 15);
+            this.label1.Location = new System.Drawing.Point(17, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "选择公司";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(216, 15);
+            this.label15.Location = new System.Drawing.Point(216, 16);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(53, 12);
+            this.label15.Size = new System.Drawing.Size(55, 13);
             this.label15.TabIndex = 8;
             this.label15.Text = "选择项目";
             // 
-            // comboBox4
+            // comboBox_project
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(275, 12);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(124, 20);
-            this.comboBox4.TabIndex = 7;
+            this.comboBox_project.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_project.FormattingEnabled = true;
+            this.comboBox_project.Location = new System.Drawing.Point(275, 13);
+            this.comboBox_project.Name = "comboBox_project";
+            this.comboBox_project.Size = new System.Drawing.Size(124, 21);
+            this.comboBox_project.TabIndex = 7;
+            this.comboBox_project.SelectedIndexChanged += new System.EventHandler(this.comboBox_project_SelectedIndexChanged);
             // 
             // button_New
             // 
-            this.button_New.Location = new System.Drawing.Point(11, 445);
+            this.button_New.Location = new System.Drawing.Point(11, 514);
             this.button_New.Name = "button_New";
-            this.button_New.Size = new System.Drawing.Size(100, 35);
+            this.button_New.Size = new System.Drawing.Size(100, 38);
             this.button_New.TabIndex = 5;
-            this.button_New.Text = "新 建";
+            this.button_New.Text = "新建项目";
             this.button_New.UseVisualStyleBackColor = true;
+            this.button_New.Click += new System.EventHandler(this.button_New_Click);
             // 
             // button_Del
             // 
-            this.button_Del.Location = new System.Drawing.Point(122, 445);
+            this.button_Del.Location = new System.Drawing.Point(122, 514);
             this.button_Del.Name = "button_Del";
-            this.button_Del.Size = new System.Drawing.Size(100, 35);
+            this.button_Del.Size = new System.Drawing.Size(100, 38);
             this.button_Del.TabIndex = 5;
-            this.button_Del.Text = "删 除";
+            this.button_Del.Text = "删除项目";
             this.button_Del.UseVisualStyleBackColor = true;
+            this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
             // 
-            // Column1
+            // label13
             // 
-            this.Column1.HeaderText = "股东姓名";
-            this.Column1.Name = "Column1";
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label13.Location = new System.Drawing.Point(42, 207);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "备注:";
             // 
-            // Column2
+            // textBox_comment
             // 
-            this.Column2.HeaderText = "资金量(万)";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 90;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "股东付息日";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "股东回报率";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 90;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "资金时间窗";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "无备注";
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column6.HeaderText = "备注";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column6.Text = "";
+            this.textBox_comment.Location = new System.Drawing.Point(89, 204);
+            this.textBox_comment.Name = "textBox_comment";
+            this.textBox_comment.Size = new System.Drawing.Size(473, 20);
+            this.textBox_comment.TabIndex = 1;
             // 
             // Form_Invest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 492);
+            this.ClientSize = new System.Drawing.Size(634, 560);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_quit);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox_project);
+            this.Controls.Add(this.comboBox_company);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.button_Del);
             this.Controls.Add(this.button_New);
@@ -504,11 +575,13 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "编辑投资项目";
+            this.Load += new System.EventHandler(this.Form_Invest_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_yield)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_volume)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,42 +592,46 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox_day;
+        private System.Windows.Forms.ComboBox comboBox_cycle;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_end;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_start;
+        private System.Windows.Forms.NumericUpDown numericUpDown_yield;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_project;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button_quit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_company;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown_volume;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_telephone;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_contact;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox_project;
         private System.Windows.Forms.Button button_New;
         private System.Windows.Forms.Button button_Del;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 删除本条信息ToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewButtonColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.CheckBox checkBox_undefined;
+        private System.Windows.Forms.TextBox textBox_comment;
+        private System.Windows.Forms.Label label13;
 
     }
 }
