@@ -88,7 +88,8 @@ namespace MyFinance
                 dataGridView1.Rows[i].Cells[0].Value = row["name"].ToString();
                 // 根据项目id查找股东投资信息
                 // 计算该项目资金量
-                int money = int.Parse(dsInvest.Tables[0].Compute("Sum(partner_volume)", "project_id = " + row["id"].ToString()).ToString());
+                int money = 0;
+                int.TryParse(dsInvest.Tables[0].Compute("Sum(partner_volume)", "project_id = " + row["id"].ToString()).ToString(), out money);
                 dataGridView1.Rows[i].Cells[1].Value = money;
                 numericUpDown_total.Value += money;
                 // 回报率
@@ -193,12 +194,6 @@ namespace MyFinance
             {
                 if (DialogResult.Yes == MessageBox.Show("确认更新公司信息:  " + comboBox1.SelectedItem.ToString() + "  ?", "更新公司信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    if (dsCompany.Tables[0].Select("name = '" + textBox_company.Text + "'").Length != 0)
-                    {
-                        MessageBox.Show("公司名称存在重复！", "更新公司错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textBox_company.Select();
-                        return;
-                    }
                     if (Form_Main._Sql.UpdaterDB(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Company",
                                                 "name='" + textBox_company.Text + "',contact='" + textBox_contact.Text + "',telephone='" + textBox_telephone.Text + "',comment='" + textBox_comment.Text + "'",
                                                 "name='" + comboBox1.SelectedItem.ToString() + "'",

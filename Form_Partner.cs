@@ -126,15 +126,6 @@ namespace MyFinance
             {
                 if (DialogResult.Yes == MessageBox.Show("确认更新股东信息:  " + comboBox_partner.SelectedItem.ToString() + "  ?", "更新股东信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    try
-                    {
-                        dsPartner.Tables[0].Select("name = " + textBox_partner.Text);
-                        MessageBox.Show("股东姓名存在重复！", "更新股东错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textBox_partner.Select();
-                        return;
-                    }
-                    catch
-                    { }
                     if (Form_Main._Sql.UpdaterDB(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Partner",
                                                 "name='" + textBox_partner.Text + "'," +
                                                 "volume=" + numericUpDown_total.Value.ToString() + "," +

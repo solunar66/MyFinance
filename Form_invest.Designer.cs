@@ -38,12 +38,6 @@
             this.checkBox_undefined = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除本条信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label11 = new System.Windows.Forms.Label();
@@ -77,6 +71,12 @@
             this.comboBox_project = new System.Windows.Forms.ComboBox();
             this.button_New = new System.Windows.Forms.Button();
             this.button_Del = new System.Windows.Forms.Button();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -154,6 +154,7 @@
             this.Column3,
             this.Column6});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(9, 230);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -162,51 +163,6 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDown);
             this.dataGridView1.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle1.NullValue = "0";
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column2.HeaderText = "本项目所投资金(万)";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 140;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle2.NullValue = "2000-01-01";
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column5.HeaderText = "起始时间";
-            this.Column5.Name = "Column5";
-            // 
-            // Column7
-            // 
-            dataGridViewCellStyle3.NullValue = "2100-12-31";
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column7.HeaderText = "终止时间";
-            this.Column7.Name = "Column7";
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column4.HeaderText = "股东付息日";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column3.HeaderText = "股东回报率";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "备注";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.Width = 200;
             // 
             // contextMenuStrip1
             // 
@@ -345,7 +301,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 12);
             this.label4.TabIndex = 4;
-            this.label4.Text = "资金周期:";
+            this.label4.Text = "项目周期:";
             // 
             // dateTimePicker_end
             // 
@@ -489,7 +445,7 @@
             // 
             this.comboBox_company.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_company.FormattingEnabled = true;
-            this.comboBox_company.Location = new System.Drawing.Point(76, 12);
+            this.comboBox_company.Location = new System.Drawing.Point(100, 12);
             this.comboBox_company.Name = "comboBox_company";
             this.comboBox_company.Size = new System.Drawing.Size(124, 20);
             this.comboBox_company.TabIndex = 7;
@@ -507,17 +463,17 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 15);
+            this.label1.Location = new System.Drawing.Point(22, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(72, 12);
             this.label1.TabIndex = 8;
             this.label1.Text = "选择公司";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(216, 15);
+            this.label15.Location = new System.Drawing.Point(240, 15);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 12);
             this.label15.TabIndex = 8;
@@ -527,7 +483,7 @@
             // 
             this.comboBox_project.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_project.FormattingEnabled = true;
-            this.comboBox_project.Location = new System.Drawing.Point(275, 12);
+            this.comboBox_project.Location = new System.Drawing.Point(299, 12);
             this.comboBox_project.Name = "comboBox_project";
             this.comboBox_project.Size = new System.Drawing.Size(124, 20);
             this.comboBox_project.TabIndex = 7;
@@ -553,6 +509,51 @@
             this.button_Del.UseVisualStyleBackColor = true;
             this.button_Del.Click += new System.EventHandler(this.button_Del_Click);
             // 
+            // Column2
+            // 
+            dataGridViewCellStyle1.NullValue = "0";
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Column2.HeaderText = "本项目所投资金(万)";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 140;
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle2.NullValue = "2000/01/01";
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column5.HeaderText = "起始时间";
+            this.Column5.Name = "Column5";
+            // 
+            // Column7
+            // 
+            dataGridViewCellStyle3.NullValue = "2100/12/31";
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column7.HeaderText = "终止时间";
+            this.Column7.Name = "Column7";
+            // 
+            // Column4
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column4.HeaderText = "股东付息日";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column3.HeaderText = "股东回报率";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "备注";
+            this.Column6.Name = "Column6";
+            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column6.Width = 200;
+            // 
             // Form_Invest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -560,11 +561,11 @@
             this.ClientSize = new System.Drawing.Size(634, 517);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_quit);
+            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.comboBox_project);
             this.Controls.Add(this.comboBox_company);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.button_Del);
             this.Controls.Add(this.button_New);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -623,15 +624,15 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 删除本条信息ToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox_undefined;
+        private System.Windows.Forms.TextBox textBox_comment;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.CheckBox checkBox_undefined;
-        private System.Windows.Forms.TextBox textBox_comment;
-        private System.Windows.Forms.Label label13;
 
     }
 }

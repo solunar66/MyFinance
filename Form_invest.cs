@@ -33,6 +33,8 @@ namespace MyFinance
                 this.Close();
             }
             // 清理界面内容
+            label1.ForeColor = Color.FromName("ControlText");
+            label1.Text = "选择公司";
             comboBox_company.Items.Clear();
             comboBox_project.Items.Clear();
             textBox_project.Text = "";
@@ -114,6 +116,7 @@ namespace MyFinance
 
             int volume = 0;
             DataRow[] invests = dsInvest.Tables[0].Select("project_id=" + dsProject.Tables[0].Select("name='" + comboBox_project.SelectedItem.ToString() + "'")[0]["id"].ToString());
+            dataGridView1.Rows.Clear();
             for (int i = 0; i < invests.Length; i++)
             {
                 dataGridView1.Rows.Insert(0, 1);
@@ -123,13 +126,13 @@ namespace MyFinance
                 DataRow partner = dsPartner.Tables[0].Select("id=" + invests[i]["partner_id"].ToString())[0];
                 row.Cells[0].Value = int.Parse(invests[i]["partner_id"].ToString());
                 row.Cells[1].Value = int.Parse(invests[i]["partner_volume"].ToString());
-                row.Cells[2].Value = invests[i]["partner_start_date"].ToString().Substring(0, 10);
-                row.Cells[3].Value = invests[i]["partner_end_date"].ToString().Substring(0, 10);
+                row.Cells[2].Value = DateTime.Parse(invests[i]["partner_start_date"].ToString()).ToShortDateString();
+                row.Cells[3].Value = DateTime.Parse(invests[i]["partner_end_date"].ToString()).ToShortDateString();
                 int settletype = int.Parse(partner["settle_type"].ToString());
                 if (settletype == 0)
                 { row.Cells[4].Value = DataType.Get_SettleType(settletype); }
                 else
-                { row.Cells[4].Value = "每" + DataType.Get_SettleType(settletype) + "的第" + partner["settle_day"].ToString() + "日"; }
+                { row.Cells[4].Value = DataType.Get_SettleType(settletype) + "的第" + partner["settle_date"].ToString() + "日"; }
                 row.Cells[5].Value = (float.Parse(partner["yield"].ToString()) * 100).ToString() + "%";
                 row.Cells[6].Value = invests[i]["comment"].ToString();
 
@@ -141,8 +144,10 @@ namespace MyFinance
 
         private void button_New_Click(object sender, EventArgs e)
         {
+            label1.ForeColor = Color.Red;
+            label1.Text = "请选择公司";
+
             // 清理界面内容
-            comboBox_company.Items.Clear();
             comboBox_project.Items.Clear();
             textBox_project.Text = "";
             textBox_contact.Text = "";
@@ -226,6 +231,7 @@ namespace MyFinance
                                                 "','" + dateTimePicker_end.Value.ToShortDateString() +
                                                 "'," + (comboBox_day.SelectedItem == null ? "1" : comboBox_day.SelectedItem.ToString()) +
                                                 "," + (checkBox_undefined.Checked ? "0" : (comboBox_cycle.SelectedIndex + 1).ToString()) +
+                                                "," + (numericUpDown_yield.Value/100).ToString() +
                                                 ",'" + textBox_comment.Text + "'", 1))
                     {
                         // 保存新项目关联的所有投资信息
@@ -234,12 +240,13 @@ namespace MyFinance
                         string values = "";
                         foreach (DataGridViewRow row in dataGridView1.Rows)
                         {
+                            if (row.Cells[0].Value == null) break;
                             values += row.Cells[0].Value.ToString() +
                                       "," + projectID +
                                       "," + row.Cells[1].Value.ToString() +
-                                      ",'" + row.Cells[2].Value.ToString() +
-                                      "','" + row.Cells[3].Value.ToString() +
-                                      "','" + row.Cells[6].Value.ToString() + "'),(";
+                                      ",'" + (row.Cells[2].Value == null ? "2000-01-01":row.Cells[2].Value.ToString()) +
+                                      "','" + (row.Cells[3].Value == null ? "2100-12-31" : row.Cells[3].Value.ToString()) +
+                                      "','" + (row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString()) + "'),(";
                         }
                         values = values.Substring(0, values.Length - 3);
                         if (Form_Main._Sql.AddRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Invest",
@@ -264,22 +271,17 @@ namespace MyFinance
             {
                 if (DialogResult.Yes == MessageBox.Show("确认更新项目信息:  " + comboBox_project.SelectedItem.ToString() + "  ?", "更新项目信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    if (dsProject.Tables[0].Select("name = '" + textBox_project.Text + "'").Length != 0)
-                    {
-                        MessageBox.Show("项目名称存在重复！", "更新新项目错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textBox_project.Select();
-                        return;
-                    }
                     // 更新项目信息
                     if (Form_Main._Sql.UpdaterDB(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Project",
                                                 "name='" + textBox_project.Text +
                                                 "',company=" + dsCompany.Tables[0].Select("name='" + comboBox_company.SelectedItem.ToString() + "'")[0]["id"].ToString() +
                                                 ",contact='" + textBox_contact.Text +
                                                 "',telephone='" + textBox_telephone.Text +
-                                                "',partner_start_date='" + dateTimePicker_start.Value.ToShortDateString() +
-                                                "',partner_end_date='" + dateTimePicker_end.Value.ToShortDateString() +
-                                                "',settle_date=" + (comboBox_day.SelectedItem == null ? "1" : comboBox_day.SelectedItem.ToString()) + "," +
+                                                "',start_date='" + dateTimePicker_start.Value.ToShortDateString() +
+                                                "',end_date='" + dateTimePicker_end.Value.ToShortDateString() +
+                                                "',settle_date=" + (comboBox_day.SelectedItem == null ? "1" : comboBox_day.SelectedItem.ToString()) +
                                                 ",settle_type=" + (checkBox_undefined.Checked ? "0" : (comboBox_cycle.SelectedIndex + 1).ToString()) +
+                                                ",yield=" + (numericUpDown_yield.Value/100).ToString() +
                                                 ",comment='" + textBox_comment.Text + "'",
                                                 "name='" + comboBox_project.SelectedItem.ToString() + "'", 1))
                     {
@@ -287,60 +289,64 @@ namespace MyFinance
                         string projectID = Form_Main._Sql.GetDataSet(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password,
                                             "*", "Table_Project", "name='" + textBox_project.Text + "'", 1).Tables[0].Rows[0]["id"].ToString();
                         // 更新投资关系
-                        // 检查已有的投资关系记录和表格内显示的行内容
-                        // - 无记录: 添加
-                        // - 有对应: 更新记录
-                        // - 无现实: 删除
+
+                        // --- 有对应: 更新记录
                         DataRow[] invests = dsInvest.Tables[0].Select("project_id=" + projectID);
                         foreach (DataRow invest in invests)
                         {
                             foreach (DataGridViewRow row in dataGridView1.Rows)
                             {
-                                // 新添加的行, 新建记录
-                                if ( row.Tag == null )
-                                {
-                                    if (!Form_Main._Sql.AddRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Invest",
-                                                    "partner_id, project_id, partner_volume, partner_start_date, partner_end_date, comment",
-                                                    row.Cells[0].Value.ToString() + "," +
-                                                    projectID + "," +
-                                                    row.Cells[1].Value.ToString() + ",'" +
-                                                    row.Cells[2].Value.ToString() + "','" +
-                                                    row.Cells[3].Value.ToString() + "','" +
-                                                    row.Cells[6].Value.ToString() + "'", 1))
-                                    {
-                                        MessageBox.Show("数据库写入异常！\n\n保存新项目相关投资信息失败！\n\n(新建投资关系记录失败)", "添加新项目错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        return;
-                                    }                                    
-                                }
                                 // 找到对应行, 更新记录
-                                else if (((string)row.Tag).Equals(invest["id"].ToString()))
+                                if ( row.Tag != null && ((string)row.Tag).Equals(invest["id"].ToString()))
                                 {
                                     if (!Form_Main._Sql.UpdaterDB(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Invest",
                                         "partner_id=" + row.Cells[0].Value.ToString() + "," +
                                         "project_id=" + projectID + "," +
                                         "partner_volume=" + row.Cells[1].Value.ToString() + "," +
-                                        "partner_start_date='" + row.Cells[2].Value.ToString() + "'," +
-                                        "partner_end_date='" + row.Cells[3].Value.ToString() + "'," +
+                                        "partner_start_date='" + (row.Cells[2].Value == null ? "2000/01/01":row.Cells[2].Value.ToString()) + "'," +
+                                        "partner_end_date='" + (row.Cells[3].Value == null ? "2100/12/31":row.Cells[3].Value.ToString()) + "'," +
                                         "comment='" + row.Cells[6].Value.ToString() + "'",
                                         "id=" + invest["id"].ToString(), 1))
                                     {
                                         MessageBox.Show("数据库写入异常！\n\n保存新项目相关投资信息失败！\n\n(更新投资关系记录失败)", "添加新项目错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         return;
                                     }
-                                    break;
+                                    // 清除已操作的行
+                                    dataGridView1.Rows.Remove(row);
+                                    // 清除已操作的记录
+                                    invest.Delete();
                                 }
-                                // 未找到对应行, 删除记录
-                                else
+                            }
+                            // --- 未找到对应行, 删除记录
+                            if(invest.RowState != DataRowState.Deleted)
+                            {
+                                if (!Form_Main._Sql.DelRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Invest",
+                                    "id=" + invest["id"].ToString(), 1))
                                 {
-                                    if (!Form_Main._Sql.DelRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Invest",
-                                        "id=" + invest["id"].ToString(), 1))
-                                    {
-                                        MessageBox.Show("数据库写入异常！\n\n保存新项目相关投资信息失败！\n\n(删除投资关系记录失败)", "添加新项目错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        return;
-                                    }
+                                    MessageBox.Show("数据库写入异常！\n\n保存新项目相关投资信息失败！\n\n(删除投资关系记录失败)", "添加新项目错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
                                 }
                             }
                         }
+                        // --- 未找到对应的已有记录 (新添加投资关系)
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            // 新添加的行, 新建记录
+                            if ( row.Cells[0].Value != null &&
+                                !Form_Main._Sql.AddRecord(Form_Main.DbHost, Form_Main.DbName, Form_Main.User, Form_Main.Password, "Table_Invest",
+                                                "partner_id, project_id, partner_volume, partner_start_date, partner_end_date, comment",
+                                                row.Cells[0].Value.ToString() + "," +
+                                                projectID + "," +
+                                                row.Cells[1].Value.ToString() + ",'" +
+                                                (row.Cells[2].Value == null ? "2000/01/01" : row.Cells[2].Value.ToString()) + "','" +
+                                                (row.Cells[3].Value == null ? "2100/12/31" : row.Cells[3].Value.ToString()) + "','" +
+                                                (row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString()) + "'", 1))
+                            {
+                                MessageBox.Show("数据库写入异常！\n\n保存新项目相关投资信息失败！\n\n(新建投资关系记录失败)", "添加新项目错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                        }
+
                         MessageBox.Show("项目更新成功！", "更新项目成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Form_Invest_Load(this, null);
                     }
@@ -366,13 +372,13 @@ namespace MyFinance
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
-                if (dataGridView1.SelectedRows[0].Cells[0].Value == null)
-                {
-                    MessageBox.Show("不能删除空行！", "删除投资关系信息", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (DialogResult.Yes == MessageBox.Show("确认删除股东 " + dataGridView1.SelectedRows[0].Cells[0].Value.ToString() + " 投资本项目的信息吗？", "确认删除", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                try
                 {
                     dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows[0].Index);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "删除投资关系信息", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -422,7 +428,7 @@ namespace MyFinance
                     }
                     catch
                     {
-                        MessageBox.Show("请重新输入日期！\n\n格式应为 YYYY-MM-DD, 例如 2000-12-31", "日期输入不合法", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("请重新输入日期！\n\n格式应为 YYYY/MM/DD, 例如 2000/12/31", "日期输入不合法", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         e.Cancel = true;
                     }
                     break;
